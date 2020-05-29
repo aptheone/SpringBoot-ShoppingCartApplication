@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../static/css/Layout.css" th:href="@{/css/style.css}"
+	rel="stylesheet" />
+<link href="../static/css/Layout.css" th:href="@{/css/cartstyle.css}"
+	rel="stylesheet" />
+<title>View Apparal</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Apparal List</h1>
+		<a href="/">Home</a> <br />
+		<br />
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Product ID</th>
+					<th>Product Name</th>
+					<th>Product Category</th>
+					<th>Price</th>
+					<th>Brand</th>
+					<th>Design</th>
+					<th>Publications</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="apparal: ${apparals}">
+					<td th:text="${apparal.product.productId}">Product ID</td>
+					<td th:text="${apparal.product.productName}">Name</td>
+					<td th:text="${apparal.product.productCategory}">Product Category</td>
+					<td th:text="${apparal.product.price}">Price</td>
+					<td th:text="${apparal.brand}">Brand</td>
+					<td th:text="${apparal.design}">Design</td>
+					<td th:text="${apparal.type}">Type</td>
+					<td>
+						<a type="button" id="add"class="button w3l-cart" 
+							th:href="@{/addToCart/(${apparal.product.productId})}">Add to cart</a>
+					</td>
+					<!-- <td><a th:href="/@{'/addToCart/' + ${product.productId}}">Add to
+							cart</a></td> -->
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

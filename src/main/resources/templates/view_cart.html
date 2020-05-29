@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../static/css/Layout.css" th:href="@{/css/style.css}"
+	rel="stylesheet" />
+<link href="../static/css/Layout.css" th:href="@{/css/cartstyle.css}"
+	rel="stylesheet" />
+<title>View Cart</title>
+</head>
+<body>
+	<div align="center">
+		<div><h3>
+				Welcome to <span th:text="${appName}">Our App</span>
+		</h3></div>
+		
+		<h4>View Below Items in the cart</h4>
+	
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				
+					<li class="active"><a href="/">Home</a></li>
+					<li><a th:href="@{/viewProduct}">View All Products</a></li>
+					<li><a th:href="@{/viewBooks}">Books</a></li>
+					<li><a th:href="@{/viewApparals}">Apparal</a></li>
+			</div>
+		</nav>
+		<div>
+
+			<div th:if="${cartItems} == false">
+				<h3>
+					<center>Your Cart is empty!! Add items to your cart..</center>
+				</h3>
+			</div>
+
+			<table border="1" cellpadding="10">
+				<thead>
+					<tr>
+						<th>Cart ID</th>
+						<th>Quantity</th>
+						<th>Price per item</th>
+						<th>Total Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="cart : ${cartItems}">
+						<td th:text="${cart.cartId}">Card ID</td>
+						<!-- <td th:text="${cart.cartItems.quantity}">Quantity</td>
+						<td th:text="${cart.cartItems.price}">price</td>
+						<td th:text="${cart.cartItems.totalPrice}">Total Price</td> 
+						<td><a type="button"class="button w3l-cart"
+							th:href="@{/addToCart/${product.productId}}">Add to cart</a></td>-->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../static/css/Layout.css" th:href="@{/css/style.css}"
+	rel="stylesheet" />
+<link href="../static/css/Layout.css" th:href="@{/css/cartstyle.css}"
+	rel="stylesheet" />
+<title>Home Page</title>
+</head>
+<body>
+	<h1>Hello !</h1>
+
+	<h3>
+		Welcome to <span th:text="${appName}">Our App</span>
+	</h3>
+	<p>
+		The main objective of the Shopping cart system is to manage the cart
+		and product details. <br /> User can add, update, remove and view the
+		products in the cart. <br /> While displaying the cart contents
+		system has to display all the items in the cart and total amount to be
+		paid by the user.
+
+	</p>
+
+
+	<ul class="nav navbar-nav">
+		<li class="active"><a href="/viewProduct">View All Products</a></li>
+		<li><a href="/viewBooks">Books</a></li>
+		<li><a href="/viewApparals">Apparal</a></li>
+
+	</ul>
+</body>
+
+
+</html>

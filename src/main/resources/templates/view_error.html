@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../static/css/Layout.css" th:href="@{/css/style.css}"
+	rel="stylesheet" />
+<link href="../static/css/Layout.css" th:href="@{/css/cartstyle.css}"
+	rel="stylesheet" />
+<title>View Errors</title>
+</head>
+<body>
+
+	<span th:if ="${errMsg==200}"> "${errMsg}"</span>
+		<h1>${errMsg} : System Errors</h1>
+	</th:if>
+	
+</body>
+</html>
